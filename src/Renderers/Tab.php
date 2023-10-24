@@ -3,7 +3,7 @@
 namespace AmisPhp\Renderers;
 /**
  * @method self title($v)
- * @method self tab($v)
+ * @method self tabs($v)
  * @method self body($v)
  * @method self badge($v)
  * @method self hash($v)
@@ -19,5 +19,5 @@ namespace AmisPhp\Renderers;
  */
 class Tab extends BaseSchema
 {
-
+    public string $type = 'tabs';
 }

@@ -30,7 +30,7 @@ class BaseSchema implements \JsonSerializable
 {
     public string $type;
 
-    public static function make(): self
+    public static function make(): static
     {
         return new static();
     }
@@ -56,7 +56,16 @@ class BaseSchema implements \JsonSerializable
         return $this;
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize():mixed
+    {
+        return $this->toArray();
+    }
+
+    public function __toString(){
+        return json_encode($this->toArray());
+    }
+
+    public function toArray():array
     {
         if (method_exists(static::class, 'defaultAttr')) {
             $this->defaultAttr();
