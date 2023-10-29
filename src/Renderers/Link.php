@@ -13,5 +13,5 @@ namespace AmisPhp\Renderers;
  */
 class Link extends BaseSchema
 {
-public string $type = 'link';
+    public string $type = 'link';
 }

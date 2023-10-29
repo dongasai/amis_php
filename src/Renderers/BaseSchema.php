@@ -30,7 +30,10 @@ class BaseSchema implements \JsonSerializable
 {
     public string $type;
 
-    public static function make(): static
+    /**
+     * @return static
+     */
+    public static function make():self
     {
         return new static();
     }
@@ -56,7 +59,7 @@ class BaseSchema implements \JsonSerializable
         return $this;
     }
 
-    public function jsonSerialize():mixed
+    public function jsonSerialize():array
     {
         return $this->toArray();
     }

@@ -10,5 +10,5 @@ namespace AmisPhp\Renderers;
  */
 class IFrame extends BaseSchema
 {
-public string $type = 'iframe';
+    public string $type = 'iframe';
 }
