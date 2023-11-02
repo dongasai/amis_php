@@ -26,6 +26,8 @@ use AmisPhp\Renderers\BaseSchema;
  * @method $this remark($v)
  * @method $this value($v)
  * @method $this unique($v)
+ * @method $this buttons($v)
+ * 
  */
 class TableColumn extends BaseSchema
 {
