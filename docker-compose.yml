@@ -1,0 +1,13 @@
+version: '2.2'
+networks:
+    ggggg:
+        external: true
+services:
+  dev:
+    build: .
+    image: amis_php:c82
+    privileged: false
+    container_name: amis_php
+    volumes:
+    - .:/var/www/html
+    tty: true
