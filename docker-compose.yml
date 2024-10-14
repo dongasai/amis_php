@@ -7,7 +7,20 @@ services:
     build: .
     image: amis_php:c82
     privileged: false
-    container_name: amis_php
+    container_name: amis_php82
     volumes:
     - .:/var/www/html
+    tty: true
+  dev81:
+    build:
+        dockerfile: ./Dockerfile81
+    image: amis_php:c81
+    privileged: false
+    container_name: amis_php81
+    environment:
+      - VIRTUAL_HOST=amisphp81.local.xiaobei.fun
+    ports:
+      - 80
+    volumes:
+      - .:/var/www/html
     tty: true

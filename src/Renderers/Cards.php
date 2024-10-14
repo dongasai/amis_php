@@ -9,7 +9,7 @@ namespace AmisPhp\Renderers;
  * @method $this itemClassName($v)
  * @method $this placeholder($v)
  * @method $this showFooter($v)
- * @method $this showHeader($v)
+ * @method $this  showHeader(bool $v)
  * @method $this source($v)
  * @method $this title($v)
  * @method $this hideCheckToggler($v)

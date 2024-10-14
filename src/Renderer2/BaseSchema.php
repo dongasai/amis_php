@@ -1,12 +1,12 @@
 <?php
 
-namespace AmisPhp\Renderers;
+namespace AmisPhp\Renderer2;
 
 use Closure;
 use JsonSerializable;
 
 /**
- * @method $this type($v)
+ *
  * @method $this className($v)
  * @method $this style($v)
  * @method $this ref($v)
@@ -16,7 +16,7 @@ use JsonSerializable;
  * @method $this hiddenOn($v)
  * @method $this visible($v)
  * @method $this visibleOn($v)
- * @method $this id(string $v)
+ * @method $this id($v)
  * @method $this value($v)
  *
  * @method $this onEvent($v) 配置事件
@@ -28,25 +28,29 @@ use JsonSerializable;
  */
 class BaseSchema implements \JsonSerializable
 {
+
     public string $type;
+
+    protected $attr = [];
 
     /**
      * @return static
      */
-    public static function make():self
+    public static function make(): self
     {
         return new static();
     }
 
     public function __set($name, $value)
     {
-        $this->$name = $value;
+        $this->attr[$name] = $value;
+
         return $this;
     }
 
     public function __get($name)
     {
-        return $this->$name;
+        return $this->attr[$name];
     }
 
     public function __call($name, $arguments)
@@ -55,26 +59,36 @@ class BaseSchema implements \JsonSerializable
         if ($argument instanceof Closure) {
             $argument = $argument();
         }
-        $this->$name = $argument;
+        $this->attr[$name] = $argument;
+
         return $this;
     }
 
-    public function jsonSerialize():array
+    public function jsonSerialize(): array
     {
         return $this->toArray();
     }
 
-    public function __toString(){
+    public function __toString()
+    {
         return json_encode($this->toArray());
     }
 
-    public function toArray():array
+    public function toArray(): array
     {
         if (method_exists(static::class, 'defaultAttr')) {
             $this->defaultAttr();
         }
 
         return get_object_vars($this);
+    }
+
+    /**
+     * @param string $type
+     */
+    public function type(string $type): void
+    {
+        $this->type = $type;
     }
 
 }
