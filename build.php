@@ -23,4 +23,6 @@ foreach ($list as $item) {
 foreach (\AmisPhp\Build::$list as $item2){
     $item2->render();;
 }
-dump(\AmisPhp\Build::$list);
+dump(\AmisPhp\Build::$list['Page']);
+
+

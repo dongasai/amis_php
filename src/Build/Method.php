@@ -35,9 +35,15 @@ class Method
      * @var string[]
      */
     static $baseMethods = [
+        'id',// id 必须的
         'style',// 样式是默认的,
         'type',// 类型是必须的
         'definitions',// definitions 跳过
+        'disabled',//disabled 默认的
+        'disabledOn',// 默认的
+        'hidden',// 默认的,
+        'hiddenOn',//hiddenOn 默认的
+        'className',// className 默认的
     ];
 
     static public function render(array $array,Build $build)
@@ -76,8 +82,10 @@ class Method
         } else {
             $v = self::getValue($schema, $key,$build);
         }
+        $desc = self::getDesc($schema, $key,$build);
 
-        return "@method $key($v\$v) $desc \r\n";
+
+        return " * @method $key($v\$v) $desc \r\n";
 
     }
 
@@ -147,7 +155,29 @@ class Method
     static public function getType(array $array)
     {
 //        dump($array);
+        if (isset($array['type'])) {
+            $const = $array['type']->const ?? '';
+
+            if($const){
+                return $const;
+            }
+            // 其他
+        }
         return $array['type']?->const ?? '';
+    }
+
+
+    /**
+     *
+     * @param $schema
+     * @param $key
+     * @param $build
+     * @return string
+     */
+    static public function getDesc($schema, $key,$build)
+    {
+//        dd($schema,__FILE__,__LINE__);
+        return $schema['description']??"";
     }
 
 }

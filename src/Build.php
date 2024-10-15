@@ -12,16 +12,16 @@ class Build
 
     public string $key;
     public string $keyOrigin;
-    public  $schema;
+    public        $schema;
 
     /**
      * @param Schema $schema
      */
-    public function __construct( $schema, $key)
+    public function __construct($schema, $key)
     {
         $this->keyOrigin = $key;
-        $this->schema = $schema;
-        $key= $this->getKey();
+        $this->schema    = $schema;
+        $key             = $this->getKey();
 
         self::$list[$key] = $this;
         $this->key        = $key;
@@ -33,9 +33,10 @@ class Build
             return;
         }
         // dump($this->key, $this->schema);
-        $methods = Method::render(((array)($this->schema?->properties ?? [])), $this);
-        $type = $this->getType();
-        $className = $this->schema->name ?? "";
+        $methods          = Method::render(((array)($this->schema?->properties ?? [])), $this);
+        $type             = $this->getType();
+        $className        = $this->getClassName();
+        $classDescription = $this->getDescription();
         if (!$type) {
             // 没有类型,跳过
             return false;
@@ -43,21 +44,25 @@ class Build
         $classString = <<<html
 <?php
 namespace AmisPhp\Renderer2;
-use AmisPhp\Renderer2\BaseSchema;
+use AmisPhp\BaseSchema;
 use AmisPhp\Build\Schema;
 /**
+ * $classDescription
+ *
 $methods
  */
 class {$className} extends BaseSchema
 {
-    public string \$type = '{$type}';
+    protected string \$type = '{$type}';
 }
 
 html;
 
+        $path = $this->getFilePath();
+        file_put_contents($path, $classString);
+//        dd($path);
 
     }
-
 
 
     /**
@@ -73,25 +78,56 @@ html;
         return $className;
     }
 
+    public function getClassName()
+    {
+        return substr($this->getFullClassName(), strrpos($this->getFullClassName(), '\\') + 1);
+    }
+
+
     public function getKey()
     {
         $type = $this->getType();
-        if(empty($type)){
+        if (empty($type)) {
+            if (substr($this->keyOrigin, -6) == 'Schema') {
+                return substr($this->keyOrigin, 0, -6);
+            }
+
             return $this->keyOrigin;
         }
-        $list2=[];
-        foreach (explode('-',$type) as $item){
-            $list2[]=ucfirst($item);
+        $list2 = [];
+        foreach (explode('-', $type) as $item) {
+            $list2[] = ucfirst($item);
         }
 
-        return implode('-',$list2);
+        return implode('-', $list2);
     }
 
     public function getType()
     {
-        $type      = Method::getType((array)($this->schema?->properties ?? []));
+        $type = Method::getType((array)($this->schema?->properties ?? []));
 
         return $type;
+    }
+
+    public function getFilePath()
+    {
+        $name = $this->getKey();
+        $name = str_replace('-', '/', $name);
+        $path = __DIR__ . '/Renderer2/' . $name . '.php';
+        $dir  = dirname($path);
+
+        if (!is_dir($dir)) {
+            dd($dir);
+            $dir = mkdir($dir, '0777', true);
+        }
+
+        return $path;
+    }
+
+    public function getDescription()
+    {
+        return $this->schema?->description;
 
     }
+
 }
