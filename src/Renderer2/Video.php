@@ -1,0 +1,45 @@
+<?php
+namespace AmisPhp\Renderer2;
+
+use AmisPhp\BaseSchema;
+
+
+/**
+ * 视频播放器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/video
+ *
+ * @method visible(boolean$v) 是否显示 
+ * @method visibleOn($v) 是否显示表达式 
+ * @method static(boolean$v) 是否静态展示 
+ * @method staticOn($v) 是否静态展示表达式 
+ * @method staticPlaceholder(string$v) 静态展示空值占位 
+ * @method staticClassName($v) 静态展示表单项类名 
+ * @method staticLabelClassName($v) 静态展示表单项Label类名 
+ * @method staticInputClassName($v) 静态展示表单项Value类名 
+ * @method useMobileUI(boolean$v) 可以组件级别用来关闭移动端样式 
+ * @method testIdBuilder($v)  
+ * @method testid(string$v)  
+ * @method autoPlay(boolean$v) 是否自动播放 
+ * @method columnsCount(int$v) 如果显示切帧，通过此配置项可以控制每行显示多少帧 
+ * @method frames(\AmisPhp\Renderer2\Video\Frames$v) 设置后，可以显示切帧.点击帧的时候会将视频跳到对应时间。
+
+frames: {  '01:22': 'http://domain/xxx.jpg' } 
+ * @method framesClassName($v) 配置帧列表容器className 
+ * @method isLive(boolean$v) 如果是实时的，请标记一下 
+ * @method jumpFrame(boolean$v) 点击帧画面时是否跳转视频对应的点 
+ * @method muted(boolean$v) 是否初始静音 
+ * @method loop(boolean$v) 是否循环播放 
+ * @method playerClassName($v) 配置播放器 className 
+ * @method poster($v) 视频封面地址 
+ * @method splitPoster(boolean$v) 是否将视频和封面分开显示 
+ * @method src($v) 视频播放地址 
+ * @method videoType(string$v) 视频类型如： video/x-flv 
+ * @method aspectRatio(string$v) 视频比率 
+ * @method rates(array$v) 视频速率 
+ * @method jumpBufferDuration(int$v) 跳转到帧时，往前多少秒。 
+ * @method stopOnNextFrame(boolean$v) 默认播放的时候到了下一帧会继续播放，同时高亮下一帧。 如果配置这个则会停止播放，等待用户选择新的区间再播放。 
+
+ */
+class Video extends BaseSchema
+{
+    protected string $type = 'video';
+}

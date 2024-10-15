@@ -37,15 +37,18 @@ class Build
         $type             = $this->getType();
         $className        = $this->getClassName();
         $classDescription = $this->getDescription();
+        $namespace        = $this->getNameSpace();
         if (!$type) {
             // 没有类型,跳过
             return false;
         }
         $classString = <<<html
 <?php
-namespace AmisPhp\Renderer2;
+namespace $namespace;
+
 use AmisPhp\BaseSchema;
-use AmisPhp\Build\Schema;
+
+
 /**
  * $classDescription
  *
@@ -83,6 +86,20 @@ html;
         return substr($this->getFullClassName(), strrpos($this->getFullClassName(), '\\') + 1);
     }
 
+    public function getNameSpace()
+    {
+        $names = $this->getKey();
+        $names = explode('-', $names);
+        if (count($names) > 1) {
+//                dd($names);
+            array_pop($names);
+            return 'AmisPhp\\Renderer2\\' . implode('\\', $names);
+
+        } else {
+            return 'AmisPhp\\Renderer2';
+        }
+    }
+
 
     public function getKey()
     {
@@ -117,8 +134,9 @@ html;
         $dir  = dirname($path);
 
         if (!is_dir($dir)) {
-            dd($dir);
-            $dir = mkdir($dir, '0777', true);
+//            dump($dir);
+            $dirmk = mkdir($dir, 0777, true);
+//            dump($dirmk);
         }
 
         return $path;
