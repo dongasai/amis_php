@@ -1,21 +1,27 @@
 {
-    "name": "dongasai/amis_php",
-    "description": "amis php",
-    "autoload": {
-        "psr-4": {
-            "AmisPhp\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "dongasai",
-            "email": "1514582970@qq.com"
-        }
+  "name": "dongasai/amis_php",
+  "description": "amis php",
+  "autoload": {
+    "psr-4": {
+      "AmisPhp\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "dongasai",
+      "email": "1514582970@qq.com"
+    }
+  ],
+  "require-dev": {
+    "symfony/var-dumper": "^6.4"
+  },
+  "scripts": {
+    "get_sdk": [
+        "php get_sdk.php",
+        "tar -zxvf jssdk.tar.gz -C jssdk"
     ],
-    "require-dev": {
-        "symfony/var-dumper": "^6.4"
-    },
-    "script": [
-
+    "get_schema": [
+      "php get_schema.php"
     ]
+  }
 }
