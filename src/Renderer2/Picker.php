@@ -54,7 +54,7 @@ use AmisPhp\BaseSchema;
  * @method inputClassName($v) 配置 input className 
  * @method placeholder(string$v) 占位符 
  * @method required(boolean$v) 是否为必填 
- * @method validationErrors(\AmisPhp\Renderer2\Picker\ValidationErrors$v) 验证失败的提示信息 
+ * @method validationErrors(\AmisPhp\Renderer2\Picker\PickerValidationErrors$v) 验证失败的提示信息 
  * @method validations($v)  
  * @method value($v) 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。 
  * @method clearValueOnHidden(boolean$v) 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉 
@@ -81,7 +81,7 @@ use AmisPhp\BaseSchema;
  * @method modalMode(string$v) 弹窗模式，dialog 或者 drawer 
  * @method modalTitle(string$v) 弹窗的标题，默认为情选择 
  * @method embed(boolean$v) 内嵌模式，也就是说不弹框了。 
- * @method overflowConfig(\AmisPhp\Renderer2\Picker\OverflowConfig$v) 开启最大标签展示数量的相关配置 
+ * @method overflowConfig(\AmisPhp\Renderer2\Picker\PickerOverflowConfig$v) 开启最大标签展示数量的相关配置 
 
  */
 class Picker extends BaseSchema

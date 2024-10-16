@@ -39,7 +39,7 @@ use AmisPhp\BaseSchema;
  * @method overlay(boolean$v) 是否显示蒙层 
  * @method dialogType(string$v) 弹框类型 confirm 确认弹框 
  * @method draggable(boolean$v) 可拖拽 
- * @method data(\AmisPhp\Renderer2\Dialog\Data$v) 数据映射 
+ * @method data(\AmisPhp\Renderer2\Dialog\DialogData$v) 数据映射 
 
  */
 class Dialog extends BaseSchema

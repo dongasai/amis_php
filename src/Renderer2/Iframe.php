@@ -19,7 +19,7 @@ use AmisPhp\BaseSchema;
  * @method testIdBuilder($v)  
  * @method testid(string$v)  
  * @method src($v) 页面地址 
- * @method events(\AmisPhp\Renderer2\Iframe\Events$v) 事件相应，配置后当 iframe 通过 postMessage 发送事件时，可以触发 AMIS 内部的动作。 
+ * @method events(\AmisPhp\Renderer2\Iframe\IframeEvents$v) 事件相应，配置后当 iframe 通过 postMessage 发送事件时，可以触发 AMIS 内部的动作。 
  * @method width(int|string$v)  
  * @method height(int|string$v)  
  * @method allow(string$v)  

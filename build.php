@@ -21,6 +21,9 @@ foreach ($list as $item) {
     new \AmisPhp\Build($item['value'],$item['key']);
 }
 foreach (\AmisPhp\Build::$list as $item2){
+    $item2->render(false);;
+}
+foreach (\AmisPhp\Build::$list as $item2){
     $item2->render();;
 }
 dump(\AmisPhp\Build::$list['Page']);

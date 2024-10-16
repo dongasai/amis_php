@@ -39,7 +39,7 @@ use AmisPhp\BaseSchema;
  * @method overlay(boolean$v) 是否显示蒙层 
  * @method closeOnOutside(boolean$v) 点击外部的时候是否关闭弹框。 
  * @method showErrorMsg(boolean$v) 是否显示错误信息 
- * @method data(\AmisPhp\Renderer2\Drawer\Data$v) 数据映射 
+ * @method data(\AmisPhp\Renderer2\Drawer\DrawerData$v) 数据映射 
 
  */
 class Drawer extends BaseSchema

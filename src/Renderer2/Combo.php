@@ -40,7 +40,7 @@ use AmisPhp\BaseSchema;
  * @method inputClassName($v) 配置 input className 
  * @method placeholder(string$v) 没有成员时显示。 
  * @method required(boolean$v) 是否为必填 
- * @method validationErrors(\AmisPhp\Renderer2\Combo\ValidationErrors$v) 验证失败的提示信息 
+ * @method validationErrors(\AmisPhp\Renderer2\Combo\ComboValidationErrors$v) 验证失败的提示信息 
  * @method validations($v)  
  * @method value($v) 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。 
  * @method clearValueOnHidden(boolean$v) 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉 
@@ -80,7 +80,7 @@ use AmisPhp\BaseSchema;
  * @method strictMode(boolean$v) 严格模式，为了性能默认不开的。 
  * @method syncFields(array$v) 配置同步字段。只有 `strictMode` 为 `false` 时有效。 如果 Combo 层级比较深，底层的获取外层的数据可能不同步。 但是给 combo 配置这个属性就能同步下来。输入格式：`["os"]` 
  * @method nullable(boolean$v) 允许为空，如果子表单项里面配置验证器，且又是单条模式。可以允许用户选择清空（不填）。 
- * @method messages(\AmisPhp\Renderer2\Combo\Messages$v) 提示信息 
+ * @method messages(\AmisPhp\Renderer2\Combo\ComboMessages$v) 提示信息 
  * @method updatePristineAfterStoreDataReInit(boolean$v)  
 
  */

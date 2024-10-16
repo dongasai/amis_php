@@ -18,9 +18,9 @@ use AmisPhp\BaseSchema;
  * @method useMobileUI(boolean$v) 可以组件级别用来关闭移动端样式 
  * @method testIdBuilder($v)  
  * @method testid(string$v)  
- * @method header(\AmisPhp\Renderer2\Card\Header$v) 头部配置 
+ * @method header(\AmisPhp\Renderer2\Card\CardHeader$v) 头部配置 
  * @method body(array$v) 内容区域 
- * @method media(\AmisPhp\Renderer2\Card\Media$v) 多媒体区域 
+ * @method media(\AmisPhp\Renderer2\Card\CardMedia$v) 多媒体区域 
  * @method actions(array$v) 底部按钮集合。 
  * @method toolbar(array$v) 工具栏按钮 
  * @method secondary($v) 次要说明 

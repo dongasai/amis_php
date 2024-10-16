@@ -27,7 +27,7 @@ class Build
         $this->key        = $key;
     }
 
-    public function render()
+    public function render($write = true)
     {
         if (!($this->schema?->description ?? '')) {
             return;
@@ -62,7 +62,9 @@ class {$className} extends BaseSchema
 html;
 
         $path = $this->getFilePath();
-        file_put_contents($path, $classString);
+        if($write){
+            file_put_contents($path, $classString);
+        }
 //        dd($path);
 
     }
@@ -76,14 +78,31 @@ html;
     public function getFullClassName()
     {
         $names     = explode('-', $this->key);
-        $className = "\\AmisPhp\\Renderer2\\" . implode("\\", $names);
+        $names2 = $names;
+        array_pop($names2);
+        $className = implode("", $names);
+        $nameSpace = $this->getNameSpace();
+        return '\\'.$nameSpace . '\\' . $className;
+        if(count($names2)> 1){
+            $className = "\\AmisPhp\\Renderer2\\". implode("\\", $names2). implode("", $names);
+
+        }elseif($names2 == 1){
+            $className = "\\AmisPhp\\Renderer2\\".  $names2[0].'\\'. implode("", $names);
+
+        }else{
+            $className = "\\AmisPhp\\Renderer2\\".  implode("", $names);
+
+        }
 
         return $className;
     }
 
     public function getClassName()
     {
-        return substr($this->getFullClassName(), strrpos($this->getFullClassName(), '\\') + 1);
+        $class =  substr($this->getFullClassName(), strrpos($this->getFullClassName(), '\\') + 1);
+
+
+        return $class;
     }
 
     public function getNameSpace()
@@ -128,9 +147,14 @@ html;
 
     public function getFilePath()
     {
-        $name = $this->getKey();
-        $name = str_replace('-', '/', $name);
+        $name = $this->getFullClassName();
+//        dump($name);
+        $name = str_replace('\\', '/', $name);
+       // /AmisPhp
+        $name = substr($name, 19);
+
         $path = __DIR__ . '/Renderer2/' . $name . '.php';
+//        dump($path,$name);
         $dir  = dirname($path);
 
         if (!is_dir($dir)) {

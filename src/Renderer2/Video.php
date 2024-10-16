@@ -20,7 +20,7 @@ use AmisPhp\BaseSchema;
  * @method testid(string$v)  
  * @method autoPlay(boolean$v) 是否自动播放 
  * @method columnsCount(int$v) 如果显示切帧，通过此配置项可以控制每行显示多少帧 
- * @method frames(\AmisPhp\Renderer2\Video\Frames$v) 设置后，可以显示切帧.点击帧的时候会将视频跳到对应时间。
+ * @method frames(\AmisPhp\Renderer2\Video\VideoFrames$v) 设置后，可以显示切帧.点击帧的时候会将视频跳到对应时间。
 
 frames: {  '01:22': 'http://domain/xxx.jpg' } 
  * @method framesClassName($v) 配置帧列表容器className 

@@ -141,7 +141,7 @@ class Method
     static public function getTypeObject($schema, $key,Build $build)
     {
         $ob = new Build($schema,$build->key.'-'.ucfirst($key));
-
+//        dd($ob);
         return $ob->getFullClassName();
     }
 

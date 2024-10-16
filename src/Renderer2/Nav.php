@@ -41,7 +41,7 @@ use AmisPhp\BaseSchema;
  * @method accordion(boolean$v) 手风琴展开 仅垂直inline模式支持 
  * @method popupClassName(string$v) 子菜单项展开浮层样式 
  * @method searchable(boolean$v) 是否开启搜索 
- * @method searchConfig(\AmisPhp\Renderer2\Nav\SearchConfig$v) 搜索框相关配置 
+ * @method searchConfig(\AmisPhp\Renderer2\Nav\NavSearchConfig$v) 搜索框相关配置 
 
  */
 class Nav extends BaseSchema

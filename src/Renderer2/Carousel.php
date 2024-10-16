@@ -32,8 +32,8 @@ use AmisPhp\BaseSchema;
  * @method thumbMode(string$v) 预览图模式 
  * @method options(array$v) 配置固定值 
  * @method alwaysShowArrow(boolean$v) 是否一直显示箭头 
- * @method multiple(\AmisPhp\Renderer2\Carousel\Multiple$v) 多图模式配置项 
- * @method icons(\AmisPhp\Renderer2\Carousel\Icons$v) 自定义箭头图标 
+ * @method multiple(\AmisPhp\Renderer2\Carousel\CarouselMultiple$v) 多图模式配置项 
+ * @method icons(\AmisPhp\Renderer2\Carousel\CarouselIcons$v) 自定义箭头图标 
 
  */
 class Carousel extends BaseSchema

@@ -27,7 +27,7 @@ use AmisPhp\BaseSchema;
  * @method fieldSet($v)  
  * @method data($v)  
  * @method debug(boolean$v) 是否开启调试，开启后会在顶部实时显示表单项数据。 
- * @method debugConfig(\AmisPhp\Renderer2\Form\DebugConfig$v) Debug面板配置 
+ * @method debugConfig(\AmisPhp\Renderer2\Form\FormDebugConfig$v) Debug面板配置 
  * @method initApi($v) 用来初始化表单数据 
  * @method initAsyncApi($v) Form 用来获取初始数据的 api,与initApi不同的是，会一直轮询请求该接口，直到返回 finished 属性为 true 才 结束。 
  * @method initFinishedField(string$v) 设置了initAsyncApi后，默认会从返回数据的data.finished来判断是否完成，也可以设置成其他的xxx，就会从data.xxx中获取 
@@ -53,7 +53,7 @@ use AmisPhp\BaseSchema;
  * @method columnCount(int$v) 表单项显示为几列 
  * @method horizontal($v) 如果是水平排版，这个属性可以细化水平排版的左右宽度占比。 
  * @method autoFocus(boolean$v) 是否自动将第一个表单元素聚焦。 
- * @method messages(\AmisPhp\Renderer2\Form\Messages$v) 消息文案配置，记住这个优先级是最低的，如果你的接口返回了 msg，接口返回的优先。 
+ * @method messages(\AmisPhp\Renderer2\Form\FormMessages$v) 消息文案配置，记住这个优先级是最低的，如果你的接口返回了 msg，接口返回的优先。 
  * @method name(string$v)  
  * @method panelClassName($v) 配置容器 panel className 
  * @method primaryField(string$v) 设置主键 id, 当设置后，检测表单是否完成时（asyncApi），只会携带此数据。 

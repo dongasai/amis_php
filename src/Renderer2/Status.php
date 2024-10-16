@@ -19,8 +19,8 @@ use AmisPhp\BaseSchema;
  * @method testIdBuilder($v)  
  * @method testid(string$v)  
  * @method placeholder(string$v) 占位符 
- * @method map(\AmisPhp\Renderer2\Status\Map$v) 状态图标映射关系 
- * @method labelMap(\AmisPhp\Renderer2\Status\LabelMap$v) 文字映射关系 
+ * @method map(\AmisPhp\Renderer2\Status\StatusMap$v) 状态图标映射关系 
+ * @method labelMap(\AmisPhp\Renderer2\Status\StatusLabelMap$v) 文字映射关系 
  * @method source($v) 新版配置映射源的字段 可以兼容新版icon并且配置颜色 2.8.0 新增 
 
  */
