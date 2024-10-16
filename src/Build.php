@@ -14,6 +14,11 @@ class Build
     public string $keyOrigin;
     public        $schema;
 
+    static $classAs = [
+        'Static' => 'StaticClass',
+        'Switch' => 'SwitchClass'
+    ];
+
     /**
      * @param Schema $schema
      */
@@ -62,7 +67,7 @@ class {$className} extends BaseSchema
 html;
 
         $path = $this->getFilePath();
-        if($write){
+        if ($write) {
             file_put_contents($path, $classString);
         }
 //        dd($path);
@@ -77,32 +82,24 @@ html;
      */
     public function getFullClassName()
     {
-        $names     = explode('-', $this->key);
-        $names2 = $names;
-        array_pop($names2);
-        $className = implode("", $names);
+        $className = $this->getClassName();
         $nameSpace = $this->getNameSpace();
-        return '\\'.$nameSpace . '\\' . $className;
-        if(count($names2)> 1){
-            $className = "\\AmisPhp\\Renderer2\\". implode("\\", $names2). implode("", $names);
 
-        }elseif($names2 == 1){
-            $className = "\\AmisPhp\\Renderer2\\".  $names2[0].'\\'. implode("", $names);
-
-        }else{
-            $className = "\\AmisPhp\\Renderer2\\".  implode("", $names);
-
-        }
-
-        return $className;
+        return '\\' . $nameSpace . '\\' . $className;
     }
 
     public function getClassName()
     {
-        $class =  substr($this->getFullClassName(), strrpos($this->getFullClassName(), '\\') + 1);
+        $names  = explode('-', $this->key);
+        $names2 = $names;
+        array_pop($names2);
+        $className = implode("", $names);
+        $className = ucfirst($className);
 
-
-        return $class;
+        if(isset(self::$classAs[$className])){
+            $className = self::$classAs[$className];
+        }
+        return $className;
     }
 
     public function getNameSpace()
@@ -112,6 +109,7 @@ html;
         if (count($names) > 1) {
 //                dd($names);
             array_pop($names);
+
             return 'AmisPhp\\Renderer2\\' . implode('\\', $names);
 
         } else {
@@ -150,12 +148,12 @@ html;
         $name = $this->getFullClassName();
 //        dump($name);
         $name = str_replace('\\', '/', $name);
-       // /AmisPhp
+        // /AmisPhp
         $name = substr($name, 19);
 
         $path = __DIR__ . '/Renderer2/' . $name . '.php';
 //        dump($path,$name);
-        $dir  = dirname($path);
+        $dir = dirname($path);
 
         if (!is_dir($dir)) {
 //            dump($dir);

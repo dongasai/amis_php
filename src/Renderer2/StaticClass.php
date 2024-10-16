@@ -5,7 +5,7 @@ use AmisPhp\BaseSchema;
 
 
 /**
- * Switch 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/switch
+ * Static 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/static
  *
  * @method visible(boolean$v) 是否显示 
  * @method visibleOn($v) 是否显示表达式 
@@ -17,7 +17,7 @@ use AmisPhp\BaseSchema;
  * @method staticInputClassName($v) 静态展示表单项Value类名 
  * @method useMobileUI(boolean$v) 可以组件级别用来关闭移动端样式 
  * @method testIdBuilder($v)  
- * @method size(string$v) 开关尺寸 
+ * @method size(string$v) 表单项大小 
  * @method label($v) 描述标题 
  * @method labelAlign($v) 描述标题 
  * @method labelWidth(int|string$v) label自定义宽度，默认单位为px 
@@ -40,7 +40,7 @@ use AmisPhp\BaseSchema;
  * @method inputClassName($v) 配置 input className 
  * @method placeholder(string$v) 占位符 
  * @method required(boolean$v) 是否为必填 
- * @method validationErrors(\AmisPhp\Renderer2\Switch\SwitchValidationErrors$v) 验证失败的提示信息 
+ * @method validationErrors(\AmisPhp\Renderer2\Static\StaticValidationErrors$v) 验证失败的提示信息 
  * @method validations($v)  
  * @method value($v) 默认值，切记只能是静态值，不支持取变量，跟数据关联是通过设置 name 属性来实现的。 
  * @method clearValueOnHidden(boolean$v) 表单项隐藏时，是否在当前 Form 中删除掉该表单项值。注意同名的未隐藏的表单项值也会删掉 
@@ -48,15 +48,15 @@ use AmisPhp\BaseSchema;
  * @method autoFill($v) 自动填充，当选项被选择的时候，将选项中的其他值同步设置到表单内。 
  * @method initAutoFill($v)  
  * @method row(int$v)  
- * @method trueValue(boolean|string|int$v) 勾选值 
- * @method falseValue(boolean|string|int$v) 未勾选值 
- * @method option(string$v) 选项说明 
- * @method onText($v) 开启时显示的内容 
- * @method offText($v) 关闭时显示的内容 
- * @method loading(boolean$v) 是否处于加载状态 
+ * @method tpl($v) 内容模板， 支持 HTML 
+ * @method text($v) 内容模板，不支持 HTML 
+ * @method popOver($v) 配置查看详情功能 
+ * @method quickEdit($v) 配置快速编辑功能 
+ * @method copyable($v) 配置点击复制功能 
+ * @method borderMode(string$v) 边框模式，默认是无边框的 
 
  */
-class Switch extends BaseSchema
+class StaticClass extends BaseSchema
 {
-    protected string $type = 'switch';
+    protected string $type = 'static';
 }
