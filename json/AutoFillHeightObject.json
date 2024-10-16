@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "height": {
+            "type": "number"
+        },
+        "maxHeight": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "height",
+        "maxHeight"
+    ],
+    "additionalProperties": false
+}

@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "test": {
+            "type": "string"
+        },
+        "items": {
+            "type": "array",
+            "items": {
+                "$ref": "#\/definitions\/ComboSubControl"
+            }
+        },
+        "label": {
+            "type": "string"
+        },
+        "scaffold": {},
+        "mode": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "test",
+        "items",
+        "label"
+    ],
+    "additionalProperties": false
+}

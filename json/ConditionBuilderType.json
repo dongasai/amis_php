@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "defaultOp": {
+            "$ref": "#\/definitions\/OperatorType"
+        },
+        "operators": {
+            "type": "array",
+            "items": {
+                "$ref": "#\/definitions\/OperatorType"
+            }
+        },
+        "placeholder": {
+            "type": "string"
+        },
+        "valueTypes": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "value",
+                    "field",
+                    "func"
+                ]
+            }
+        }
+    },
+    "required": [
+        "operators"
+    ],
+    "additionalProperties": false
+}

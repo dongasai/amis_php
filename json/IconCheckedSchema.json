@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "svg": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "additionalProperties": false
+}

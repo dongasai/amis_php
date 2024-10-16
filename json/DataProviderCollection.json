@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "inited": {
+            "$ref": "#\/definitions\/DataProvider"
+        },
+        "onApiFetched": {
+            "$ref": "#\/definitions\/DataProvider"
+        },
+        "onSchemaApiFetched": {
+            "$ref": "#\/definitions\/DataProvider"
+        },
+        "onWsFetched": {
+            "$ref": "#\/definitions\/DataProvider"
+        }
+    },
+    "additionalProperties": false
+}

@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "maxWait": {
+            "type": "number"
+        },
+        "wait": {
+            "type": "number"
+        },
+        "leading": {
+            "type": "boolean"
+        },
+        "trailing": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false
+}

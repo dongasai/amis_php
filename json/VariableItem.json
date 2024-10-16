@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "label": {
+            "type": "string"
+        },
+        "value": {
+            "type": "string"
+        },
+        "path": {
+            "type": "string"
+        },
+        "children": {
+            "type": "array",
+            "items": {
+                "$ref": "#\/definitions\/VariableItem"
+            }
+        },
+        "type": {
+            "type": "string"
+        },
+        "tag": {
+            "type": "string"
+        },
+        "selectMode": {
+            "type": "string",
+            "enum": [
+                "tree",
+                "tabs"
+            ]
+        },
+        "isMember": {
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "label"
+    ],
+    "additionalProperties": false
+}

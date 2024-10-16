@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "testId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false
+}

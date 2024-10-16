@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "icon": {
+            "$ref": "#\/definitions\/SchemaIcon"
+        },
+        "position": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "position"
+    ],
+    "additionalProperties": false
+}

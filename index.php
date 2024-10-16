@@ -1,3 +1,5 @@
 <?php
 
-include "build.php";
+//include "build.php";
+
+include "json_slicing.php";

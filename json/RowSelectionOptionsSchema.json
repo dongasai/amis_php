@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "key": {
+            "type": "string",
+            "description": "选择类型 选择全部"
+        },
+        "text": {
+            "type": "string",
+            "description": "选项显示文本"
+        }
+    },
+    "required": [
+        "key",
+        "text"
+    ],
+    "additionalProperties": false
+}
