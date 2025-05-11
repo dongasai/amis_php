@@ -4,8 +4,9 @@
 
 ## 版本
 1. Amis 6.8.0
+2. php 8.x
 
-## 安装
+ 安装
 
 1. composer 包安装
 ```bash

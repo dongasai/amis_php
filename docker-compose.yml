@@ -5,9 +5,9 @@ networks:
 services:
   dev:
     build: .
-    image: amis_php:c82
+    image: amis_php:c83
     privileged: false
-    container_name: amis_php82
+    container_name: amis_php83
     volumes:
     - .:/var/www/html
     tty: true

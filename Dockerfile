@@ -1,5 +1,5 @@
 
-FROM php:8.2.16-cli
+FROM php:8.3-cli
 
 ENV REFRESH_DATE 8
 #COPY sources.list /etc/apt/sources.list
