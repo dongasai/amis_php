@@ -2,12 +2,18 @@
 
 namespace AmisPhp;
 
+use AmisPhp\Build\AllOf;
 use AmisPhp\Build\Method;
 use AmisPhp\Build\Schema;
 
 class Build
 {
 
+    /**
+     *
+     *
+     * @var Build[] array
+     */
     static $list = [];
 
     public string $key;
@@ -32,19 +38,39 @@ class Build
         $this->key        = $key;
     }
 
+    public function renderMethods()
+    {
+//        dump($this->keyOrigin);
+        if ($this->schema?->allOf) {
+            $methods = AllOf::renderMethod(((array)($this->schema?->allOf ?? [])), $this);
+        } else {
+            $methods = Method::render(((array)($this->schema?->properties ?? [])), $this);
+        }
+        if ($this->keyOrigin == 'BaseCardsSchema') {
+//            dd($methods);
+        }
+
+        return $methods;
+    }
+
     public function render($write = true)
     {
-        if (!($this->schema?->description ?? '')) {
+        $description = $this->getDescription();
+        if (!($description)) {
+            echo "没有description,跳过 {$this->keyOrigin} \n";
+
             return;
         }
         // dump($this->key, $this->schema);
-        $methods          = Method::render(((array)($this->schema?->properties ?? [])), $this);
+        $methods          = $this->renderMethods();
         $type             = $this->getType();
         $className        = $this->getClassName();
         $classDescription = $this->getDescription();
         $namespace        = $this->getNameSpace();
         if (!$type) {
             // 没有类型,跳过
+            echo "没有类型,跳过  $className  \n";
+
             return false;
         }
         $classString = <<<html
@@ -96,9 +122,10 @@ html;
         $className = implode("", $names);
         $className = ucfirst($className);
 
-        if(isset(self::$classAs[$className])){
+        if (isset(self::$classAs[$className])) {
             $className = self::$classAs[$className];
         }
+
         return $className;
     }
 
@@ -164,10 +191,16 @@ html;
         return $path;
     }
 
-    public function getDescription()
-    {
-        return $this->schema?->description;
 
+    public function getDescription(): string
+    {
+        $description = $this->schema?->description ?? '';
+        if(empty($description)){
+            // 没有描述,但是有上级
+
+
+        }
+        return $description;
     }
 
 }
