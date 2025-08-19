@@ -2,4 +2,5 @@
 
 //include "build.php";
 
-include "json_slicing.php";
+//include "json_slicing.php";
+ phpinfo();

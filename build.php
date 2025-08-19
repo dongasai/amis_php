@@ -20,12 +20,13 @@ foreach ($data->definitions as $key => $value) {
 foreach ($list as $item) {
     new \AmisPhp\Build($item['value'],$item['key']);
 }
+// dump($list);
 foreach (\AmisPhp\Build::$list as $item2){
     $item2->render(false);;
 }
 foreach (\AmisPhp\Build::$list as $item2){
     $item2->render();;
 }
-dump(\AmisPhp\Build::$list['Page']);
+// dump(\AmisPhp\Build::$list['Page']);
 
 

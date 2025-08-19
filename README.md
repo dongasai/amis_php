@@ -3,7 +3,7 @@
 > 本组件的本质是使用php渲染出 `amis`的 `schema` ,然后有 `amis`渲染器渲染产生页面
 
 ## 版本
-1. Amis 6.8.0
+1. Amis 6.13.0
 2. php 8.x
 
  安装
@@ -26,6 +26,10 @@ composer require dongasai/amis_php
 
 ```
 
+## 开发流程
+
+1. get schema sdk
+2. 
 
 ## 其他推荐
 

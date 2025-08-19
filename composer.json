@@ -24,6 +24,9 @@
     ],
     "get_schema": [
       "php get_schema.php"
+    ],
+    "build":[
+      "php build.php"
     ]
   },
   "require": {
