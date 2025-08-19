@@ -85,7 +85,7 @@ class Method
         $desc = self::getDesc($schema, $key,$build);
 
 
-        return " * @method $key($v\$v) $desc \r\n";
+        return " * @method $key($v \$v) $desc \r\n";
 
     }
 
