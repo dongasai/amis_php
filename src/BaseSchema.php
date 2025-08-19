@@ -50,7 +50,7 @@ class BaseSchema implements \JsonSerializable
 
     public function __get($name)
     {
-        return $this->attr[$name];
+        return $this->attr[$name] ?? null;
     }
 
     public function __call($name, $arguments)
@@ -80,7 +80,13 @@ class BaseSchema implements \JsonSerializable
             $this->defaultAttr();
         }
 
-        return get_object_vars($this);
+        $vars = get_object_vars($this);
+        // 确保包含受保护的 $type 属性
+        if (isset($this->type)) {
+            $vars['type'] = $this->type;
+        }
+
+        return $vars;
     }
 
     /**
@@ -89,6 +95,14 @@ class BaseSchema implements \JsonSerializable
     public function type(string $type): void
     {
         $this->type = $type;
+    }
+
+    /**
+     * Get the type value
+     */
+    public function getType()
+    {
+        return $this->type ?? null;
     }
 
 }
