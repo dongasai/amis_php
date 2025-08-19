@@ -1,0 +1,211 @@
+{
+    "allOf": [
+        {
+            "type": "object",
+            "properties": {
+                "evalMode": {
+                    "type": "boolean",
+                    "description": "evalMode 即直接就是表达式，否则 需要 ${这里面才是表达式} 默认为 true"
+                },
+                "mixedMode": {
+                    "type": "boolean",
+                    "description": "混合模式，意味着这个输入框既可以输入不同文本 也可以输入公式。 当输入公式时，值格式为 ${公式内容} 其他内容当字符串。"
+                },
+                "variables": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/VariableItem"
+                    },
+                    "description": "用于提示的变量集合，默认为空"
+                },
+                "variableMode": {
+                    "type": "string",
+                    "enum": [
+                        "tabs",
+                        "tree"
+                    ],
+                    "description": "变量展现模式，可选值：'tabs' ｜ 'tree'"
+                },
+                "functions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/FuncGroup"
+                    },
+                    "description": "函数集合，默认不需要传，即  amis-formula 里面那个函数 如果有扩充，则需要传。"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "编辑器标题"
+                },
+                "header": {
+                    "type": "string",
+                    "description": "顶部标题，默认为表达式"
+                },
+                "inputMode": {
+                    "type": "string",
+                    "enum": [
+                        "button",
+                        "input-button",
+                        "input-group"
+                    ],
+                    "description": "控件模式"
+                },
+                "allowInput": {
+                    "type": "boolean",
+                    "description": "外层input是否允许输入，否需要点击fx在弹窗中输入"
+                },
+                "icon": {
+                    "$ref": "#\/definitions\/SchemaIcon",
+                    "description": "按钮图标"
+                },
+                "btnLabel": {
+                    "type": "string",
+                    "description": "按钮Label，inputMode为button时生效"
+                },
+                "level": {
+                    "type": "string",
+                    "enum": [
+                        "info",
+                        "success",
+                        "warning",
+                        "danger",
+                        "link",
+                        "primary",
+                        "dark",
+                        "light"
+                    ],
+                    "description": "按钮样式"
+                },
+                "btnSize": {
+                    "type": "string",
+                    "enum": [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg"
+                    ],
+                    "description": "按钮大小"
+                },
+                "borderMode": {
+                    "type": "string",
+                    "enum": [
+                        "full",
+                        "half",
+                        "none"
+                    ],
+                    "description": "边框模式，全边框，还是半边框，或者没边框。"
+                },
+                "placeholder": {
+                    "type": "string",
+                    "description": "输入框占位符"
+                },
+                "variableClassName": {
+                    "type": "string",
+                    "description": "变量面板CSS样式类名"
+                },
+                "functionClassName": {
+                    "type": "string",
+                    "description": "函数面板CSS样式类名"
+                },
+                "selfVariableName": {
+                    "type": "string",
+                    "description": "当前输入项字段 name: 用于避免循环绑定自身导致无限渲染"
+                },
+                "inputSettings": {
+                    "$ref": "#\/definitions\/FormulaPickerInputSettings",
+                    "description": "输入框的类型"
+                }
+            },
+            "required": [
+                "variables",
+                "functions",
+                "header"
+            ]
+        },
+        {
+            "$ref": "#\/definitions\/FormBaseControlSchema",
+            "additionalProperties": true
+        }
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "label": true,
+        "labelAlign": true,
+        "labelWidth": true,
+        "labelOverflow": true,
+        "labelClassName": true,
+        "name": true,
+        "extraName": true,
+        "remark": true,
+        "labelRemark": true,
+        "hint": true,
+        "submitOnChange": true,
+        "readOnly": true,
+        "readOnlyOn": true,
+        "validateOnChange": true,
+        "description": true,
+        "desc": true,
+        "descriptionClassName": true,
+        "mode": true,
+        "horizontal": true,
+        "inline": true,
+        "inputClassName": true,
+        "placeholder": true,
+        "required": true,
+        "validationErrors": true,
+        "validations": true,
+        "value": true,
+        "clearValueOnHidden": true,
+        "validateApi": true,
+        "autoFill": true,
+        "initAutoFill": true,
+        "row": true,
+        "$$id": true,
+        "className": true,
+        "$ref": true,
+        "disabled": true,
+        "disabledOn": true,
+        "hidden": true,
+        "hiddenOn": true,
+        "visible": true,
+        "visibleOn": true,
+        "id": true,
+        "onEvent": true,
+        "static": true,
+        "staticOn": true,
+        "staticPlaceholder": true,
+        "staticClassName": true,
+        "staticLabelClassName": true,
+        "staticInputClassName": true,
+        "staticSchema": true,
+        "style": true,
+        "editorSetting": true,
+        "useMobileUI": true,
+        "size": true,
+        "type": true,
+        "evalMode": true,
+        "mixedMode": true,
+        "variables": true,
+        "variableMode": true,
+        "functions": true,
+        "title": true,
+        "header": true,
+        "inputMode": true,
+        "allowInput": true,
+        "icon": true,
+        "btnLabel": true,
+        "level": true,
+        "btnSize": true,
+        "borderMode": true,
+        "variableClassName": true,
+        "functionClassName": true,
+        "selfVariableName": true,
+        "inputSettings": true
+    },
+    "required": [
+        "variables",
+        "functions",
+        "header"
+    ],
+    "description": "InputFormula 公式编辑器 文档：https:\/\/baidu.gitee.io\/amis\/zh-CN\/components\/form\/input-formula"
+}

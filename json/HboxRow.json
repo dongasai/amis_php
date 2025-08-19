@@ -1,0 +1,19 @@
+{
+    "allOf": [
+        {
+            "$ref": "#\/definitions\/SchemaObjectLoose"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "rowClassName": {
+                    "type": "string"
+                },
+                "cellClassName": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": true
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "allOf": [
+        {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "$ref": "#\/definitions\/SchemaType"
+                },
+                "testid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type"
+            ]
+        },
+        {
+            "$ref": "#\/definitions\/BaseSchemaWithoutType",
+            "additionalProperties": true
+        }
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "$$id": true,
+        "className": true,
+        "$ref": true,
+        "disabled": true,
+        "disabledOn": true,
+        "hidden": true,
+        "hiddenOn": true,
+        "visible": true,
+        "visibleOn": true,
+        "id": true,
+        "onEvent": true,
+        "static": true,
+        "staticOn": true,
+        "staticPlaceholder": true,
+        "staticClassName": true,
+        "staticLabelClassName": true,
+        "staticInputClassName": true,
+        "staticSchema": true,
+        "style": true,
+        "editorSetting": true,
+        "useMobileUI": true,
+        "type": true,
+        "testid": true
+    },
+    "required": [
+        "type"
+    ]
+}

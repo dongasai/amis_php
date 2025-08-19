@@ -1,0 +1,11 @@
+{
+    "allOf": [
+        {
+            "$ref": "#\/definitions\/SchemaObjectLoose"
+        },
+        {
+            "$ref": "#\/definitions\/TableColumnObject",
+            "additionalProperties": true
+        }
+    ]
+}

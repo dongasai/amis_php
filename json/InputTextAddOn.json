@@ -1,0 +1,11 @@
+{
+    "allOf": [
+        {
+            "$ref": "#\/definitions\/ActionSchemaLoose"
+        },
+        {
+            "$ref": "#\/definitions\/InputTextAddOnObject",
+            "additionalProperties": true
+        }
+    ]
+}

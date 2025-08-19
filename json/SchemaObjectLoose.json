@@ -1,0 +1,2296 @@
+{
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "page"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/PageSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "flex"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/FlexSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "tpl",
+                            "html"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TplSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "remark"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/RemarkSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "alert"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/AlertSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "audio"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/AudioSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "avatar"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/AvatarSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "button-group"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ButtonGroupSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "button-toolbar"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ButtonToolbarSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "calendar"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/CalendarSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "card"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/CardSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "cards"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/CardsSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "carousel"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/CarouselSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "chart"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ChartSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "collapse"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/CollapseSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "collapse-group"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/CollapseGroupSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "color"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ColorSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "container"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ContainerSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "switch-container"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/SwitchContainerSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "date",
+                            "datetime",
+                            "time",
+                            "static-date",
+                            "static-datetime",
+                            "static-time"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/DateSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "dialog"
+                    },
+                    "dialogType": {
+                        "type": "string",
+                        "const": "confirm"
+                    }
+                },
+                "required": [
+                    "type",
+                    "dialogType"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/DialogSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "divider"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/DividerSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "drawer"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/DrawerSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "dropdown-button"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/DropdownButtonSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "each"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/EachSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "grid"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/GridSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "grid-2d"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/Grid2DSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "hbox"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/HBoxSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "icon"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/IconSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "iframe"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/IFrameSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "image",
+                            "static-image"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ImageSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "images",
+                            "static-images"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ImagesSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "json",
+                            "static-json"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/JsonSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "link"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/LinkSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "list",
+                            "static-list"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ListSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "map",
+                            "mapping"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/MappingSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "nav"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/NavSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "operation"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/OperationSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "pagination"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/PaginationSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "pagination-wrapper"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/PaginationWrapperSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "panel"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/PanelSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "plain",
+                            "text"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/PlainSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "progress"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ProgressSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "qrcode",
+                            "qr-code"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/QRCodeSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "search-box"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/SearchBoxSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "service"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ServiceSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "sparkline"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/SparkLineSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "status"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/StatusSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "spinner"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/SpinnerSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "table",
+                            "static-table"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TableSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "table2"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TableSchema2",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "tabs"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TabsSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "tasks"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TasksSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "vbox"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/VBoxSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "video"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/VideoSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "wizard"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/WizardSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "wrapper"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/WrapperSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "tooltip-wrapper"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TooltipWrapperSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "form"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/FormSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "anchor-nav"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/AnchorNavSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "steps"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/StepsSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "portlet"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/PortletSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "timeline"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TimelineSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "control"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/FormControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-array"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ArrayControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "button-group-select"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ButtonGroupControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "chained-select"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ChainedSelectControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "checkbox"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/CheckboxControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "checkboxes"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/CheckboxesControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-city"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/InputCityControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-color"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/InputColorControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "combo"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ComboControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "condition-builder"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ConditionBuilderControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-date"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/DateControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-datetime"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/DateTimeControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-time"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TimeControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-month"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/MonthControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-quarter"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/QuarterControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-year"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/YearControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "input-date-range",
+                            "input-datetime-range",
+                            "input-time-range"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/DateRangeControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "diff-editor"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/DiffControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "editor",
+                            "bat-editor",
+                            "c-editor",
+                            "coffeescript-editor",
+                            "cpp-editor",
+                            "csharp-editor",
+                            "css-editor",
+                            "dockerfile-editor",
+                            "fsharp-editor",
+                            "go-editor",
+                            "handlebars-editor",
+                            "html-editor",
+                            "ini-editor",
+                            "java-editor",
+                            "javascript-editor",
+                            "json-editor",
+                            "less-editor",
+                            "lua-editor",
+                            "markdown-editor",
+                            "msdax-editor",
+                            "objective-c-editor",
+                            "php-editor",
+                            "plaintext-editor",
+                            "postiats-editor",
+                            "powershell-editor",
+                            "pug-editor",
+                            "python-editor",
+                            "r-editor",
+                            "razor-editor",
+                            "ruby-editor",
+                            "sb-editor",
+                            "scss-editor",
+                            "sol-editor",
+                            "sql-editor",
+                            "swift-editor",
+                            "typescript-editor",
+                            "vb-editor",
+                            "xml-editor",
+                            "yaml-editor"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/EditorControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "fieldset",
+                            "fieldSet"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/FieldSetControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-file"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/FileControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "formula"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/FormulaControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "group"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/GroupControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "hidden"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/HiddenControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "icon-picker"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/IconPickerControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-image"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ImageControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-group"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/InputGroupControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "list-select"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ListControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "json-schema-editor"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/JSONSchemaEditorControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-signature"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/InputSignatureSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "location-picker"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/LocationControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "uuid"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/UUIDControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "matrix-checkboxes"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/MatrixControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-month-range"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/MonthRangeControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-quarter-range"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/QuarterRangeControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "nested-select"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/NestedSelectControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-number"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/NumberControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "picker"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/PickerControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "radios"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/RadiosControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "radio"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/RadioControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-range"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/RangeControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-rating"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/RatingControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-rich-text"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/RichTextControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-repeat"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/RepeatControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "select",
+                            "multi-select"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/SelectControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-sub-form"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/SubFormControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "switch"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/SwitchControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "static"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/StaticExactControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-table"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TableControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "tabs-transfer"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TabsTransferControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-tag"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TagControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "input-text",
+                            "input-email",
+                            "input-url",
+                            "input-password",
+                            "native-date",
+                            "native-time",
+                            "native-number"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TextControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "textarea"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TextareaControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "transfer"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TransferControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "transfer-picker"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TransferPickerControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "tabs-transfer-picker"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TabsTransferPickerControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "input-tree"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TreeControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "tree-select"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/TreeSelectControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "users-select"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/UserSelectControlSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "date-range"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/DateRangeSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "multiline-text"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/MultilineTextSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "password"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/PasswordSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "words"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/WordsSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "slider"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/SliderSchema",
+                "additionalProperties": true
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "enum": [
+                            "action",
+                            "button",
+                            "submit",
+                            "reset"
+                        ]
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/ActionSchemaLoose"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "const": "crud"
+                    }
+                },
+                "required": [
+                    "type"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/CRUDSchema",
+                "additionalProperties": true
+            }
+        }
+    ]
+}

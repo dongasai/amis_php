@@ -1,0 +1,106 @@
+{
+    "allOf": [
+        {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "icon": {
+                    "$ref": "#\/definitions\/SchemaIcon"
+                },
+                "tooltipClassName": {
+                    "$ref": "#\/definitions\/SchemaClassName"
+                },
+                "trigger": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "click",
+                            "hover",
+                            "focus"
+                        ]
+                    },
+                    "description": "触发规则"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "提示标题"
+                },
+                "content": {
+                    "$ref": "#\/definitions\/SchemaTpl",
+                    "description": "提示内容"
+                },
+                "placement": {
+                    "type": "string",
+                    "enum": [
+                        "top",
+                        "right",
+                        "bottom",
+                        "left"
+                    ],
+                    "description": "显示位置"
+                },
+                "rootClose": {
+                    "type": "boolean",
+                    "description": "点击其他内容时是否关闭弹框信息"
+                },
+                "shape": {
+                    "type": "string",
+                    "enum": [
+                        "circle",
+                        "square"
+                    ],
+                    "description": "icon的形状"
+                }
+            },
+            "required": [
+                "content"
+            ]
+        },
+        {
+            "$ref": "#\/definitions\/BaseSchema",
+            "additionalProperties": true
+        }
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "$$id": true,
+        "className": true,
+        "$ref": true,
+        "disabled": true,
+        "disabledOn": true,
+        "hidden": true,
+        "hiddenOn": true,
+        "visible": true,
+        "visibleOn": true,
+        "id": true,
+        "onEvent": true,
+        "static": true,
+        "staticOn": true,
+        "staticPlaceholder": true,
+        "staticClassName": true,
+        "staticLabelClassName": true,
+        "staticInputClassName": true,
+        "staticSchema": true,
+        "style": true,
+        "editorSetting": true,
+        "useMobileUI": true,
+        "type": true,
+        "testid": true,
+        "label": true,
+        "icon": true,
+        "tooltipClassName": true,
+        "trigger": true,
+        "title": true,
+        "content": true,
+        "placement": true,
+        "rootClose": true,
+        "shape": true
+    },
+    "required": [
+        "content"
+    ],
+    "description": "提示渲染器，默认会显示个小图标，鼠标放上来的时候显示配置的内容。"
+}

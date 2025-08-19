@@ -1,0 +1,11 @@
+{
+    "allOf": [
+        {
+            "$ref": "#\/definitions\/GridObject",
+            "additionalProperties": true
+        },
+        {
+            "$ref": "#\/definitions\/SchemaObjectLoose"
+        }
+    ]
+}

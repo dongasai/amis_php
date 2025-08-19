@@ -1,70 +1,93 @@
 {
-    "type": "object",
-    "properties": {
-        "type": {
-            "$ref": "#\/definitions\/FieldTypes"
-        },
-        "label": {
-            "type": "string"
-        },
-        "valueTypes": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "value",
-                    "field",
-                    "func"
-                ]
+    "allOf": [
+        {
+            "type": "object",
+            "properties": {
+                "isOptional": {
+                    "type": "boolean"
+                }
             }
         },
-        "operators": {
-            "type": "array",
-            "items": {
-                "anyOf": [
-                    {
-                        "type": "string"
-                    },
-                    {
-                        "type": "object",
-                        "properties": {
-                            "lable": {
-                                "type": "string"
-                            },
-                            "value": {
-                                "type": "string"
-                            },
-                            "values": {
-                                "type": "array",
-                                "items": {}
-                            }
-                        },
-                        "required": [
-                            "lable",
-                            "value"
-                        ],
-                        "additionalProperties": false
+        {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "$ref": "#\/definitions\/FieldTypes"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "valueTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "value",
+                            "field",
+                            "func"
+                        ]
                     }
-                ]
-            }
-        },
-        "funcs": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        },
-        "defaultValue": {},
-        "placeholder": {
-            "type": "string"
-        },
-        "isOptional": {
-            "type": "boolean"
+                },
+                "operators": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "lable": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    },
+                                    "values": {
+                                        "type": "array",
+                                        "items": {}
+                                    }
+                                },
+                                "required": [
+                                    "lable",
+                                    "value"
+                                ],
+                                "additionalProperties": false
+                            }
+                        ]
+                    }
+                },
+                "funcs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "defaultValue": {},
+                "placeholder": {
+                    "type": "string"
+                },
+                "disabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "type",
+                "label"
+            ]
         }
-    },
+    ],
     "additionalProperties": false,
-    "required": [
-        "label",
-        "type"
-    ]
+    "properties": {
+        "type": true,
+        "label": true,
+        "valueTypes": true,
+        "operators": true,
+        "funcs": true,
+        "defaultValue": true,
+        "placeholder": true,
+        "disabled": true,
+        "isOptional": true
+    }
 }

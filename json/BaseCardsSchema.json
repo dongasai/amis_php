@@ -1,0 +1,149 @@
+{
+    "allOf": [
+        {
+            "type": "object",
+            "properties": {
+                "card": {
+                    "anyOf": [
+                        {
+                            "$ref": "#\/definitions\/CardSchemaWithoutType"
+                        },
+                        {
+                            "$ref": "#\/definitions\/Card2Schema"
+                        }
+                    ]
+                },
+                "headerClassName": {
+                    "$ref": "#\/definitions\/SchemaClassName",
+                    "description": "头部 CSS 类名"
+                },
+                "footerClassName": {
+                    "$ref": "#\/definitions\/SchemaClassName",
+                    "description": "底部 CSS 类名"
+                },
+                "itemClassName": {
+                    "$ref": "#\/definitions\/SchemaClassName",
+                    "description": "卡片 CSS 类名",
+                    "default": "Grid-col--xs12 Grid-col--sm6 Grid-col--md4 Grid-col--lg3"
+                },
+                "placeholder": {
+                    "$ref": "#\/definitions\/SchemaTpl",
+                    "description": "无数据提示",
+                    "default": "暂无数据"
+                },
+                "showFooter": {
+                    "type": "boolean",
+                    "description": "是否显示底部"
+                },
+                "showHeader": {
+                    "type": "boolean",
+                    "description": "是否显示头部"
+                },
+                "source": {
+                    "$ref": "#\/definitions\/SchemaTokenizeableString",
+                    "description": "数据源: 绑定当前环境变量",
+                    "default": "${items}"
+                },
+                "title": {
+                    "$ref": "#\/definitions\/SchemaTpl",
+                    "description": "标题"
+                },
+                "hideCheckToggler": {
+                    "type": "boolean",
+                    "description": "是否隐藏勾选框"
+                },
+                "affixHeader": {
+                    "type": "boolean",
+                    "description": "是否固顶"
+                },
+                "affixFooter": {
+                    "type": "boolean",
+                    "description": "是否固底"
+                },
+                "header": {
+                    "$ref": "#\/definitions\/SchemaCollection",
+                    "description": "顶部区域"
+                },
+                "footer": {
+                    "$ref": "#\/definitions\/SchemaCollection",
+                    "description": "底部区域"
+                },
+                "itemCheckableOn": {
+                    "$ref": "#\/definitions\/SchemaExpression",
+                    "description": "配置某项是否可以点选"
+                },
+                "itemDraggableOn": {
+                    "$ref": "#\/definitions\/SchemaExpression",
+                    "description": "配置某项是否可拖拽排序，前提是要开启拖拽功能"
+                },
+                "checkOnItemClick": {
+                    "type": "boolean",
+                    "description": "点击卡片的时候是否勾选卡片。"
+                },
+                "masonryLayout": {
+                    "type": "boolean",
+                    "description": "是否为瀑布流布局？"
+                },
+                "valueField": {
+                    "type": "string",
+                    "description": "可以用来作为值的字段"
+                }
+            }
+        },
+        {
+            "$ref": "#\/definitions\/BaseSchema",
+            "additionalProperties": true
+        },
+        {
+            "$ref": "#\/definitions\/SpinnerExtraProps",
+            "additionalProperties": true
+        }
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "loadingConfig": true,
+        "$$id": true,
+        "className": true,
+        "$ref": true,
+        "disabled": true,
+        "disabledOn": true,
+        "hidden": true,
+        "hiddenOn": true,
+        "visible": true,
+        "visibleOn": true,
+        "id": true,
+        "onEvent": true,
+        "static": true,
+        "staticOn": true,
+        "staticPlaceholder": true,
+        "staticClassName": true,
+        "staticLabelClassName": true,
+        "staticInputClassName": true,
+        "staticSchema": true,
+        "style": true,
+        "editorSetting": true,
+        "useMobileUI": true,
+        "type": true,
+        "testid": true,
+        "card": true,
+        "headerClassName": true,
+        "footerClassName": true,
+        "itemClassName": true,
+        "placeholder": true,
+        "showFooter": true,
+        "showHeader": true,
+        "source": true,
+        "title": true,
+        "hideCheckToggler": true,
+        "affixHeader": true,
+        "affixFooter": true,
+        "header": true,
+        "footer": true,
+        "itemCheckableOn": true,
+        "itemDraggableOn": true,
+        "checkOnItemClick": true,
+        "masonryLayout": true,
+        "valueField": true
+    },
+    "description": "Cards 卡片集合渲染器。 文档：https:\/\/aisuda.bce.baidu.com\/amis\/zh-CN\/components\/cards"
+}

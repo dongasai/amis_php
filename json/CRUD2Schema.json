@@ -1,0 +1,67 @@
+{
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "crud2"
+                    },
+                    "mode": {
+                        "type": "string",
+                        "const": "cards"
+                    }
+                },
+                "required": [
+                    "type",
+                    "mode"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/CRUD2CardsSchema"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "crud2"
+                    },
+                    "mode": {
+                        "type": "string",
+                        "const": "list"
+                    }
+                },
+                "required": [
+                    "type",
+                    "mode"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/CRUD2ListSchema"
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "const": "crud2"
+                    },
+                    "mode": {
+                        "type": "string",
+                        "const": "table2"
+                    }
+                },
+                "required": [
+                    "type",
+                    "mode"
+                ]
+            },
+            "then": {
+                "$ref": "#\/definitions\/CRUD2TableSchema"
+            }
+        }
+    ]
+}
