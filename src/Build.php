@@ -56,23 +56,52 @@ class Build
     public function render($write = true)
     {
         $description = $this->getDescription();
-        if (!($description)) {
-            echo "没有description,跳过 {$this->keyOrigin} \n";
-
-            return;
-        }
+        // 不再跳过没有描述的类
+        // if (!($description)) {
+        //     echo "没有description,跳过 {$this->keyOrigin} \n";
+        //     return;
+        // }
+        
         // dump($this->key, $this->schema);
         $methods          = $this->renderMethods();
         $type             = $this->getType();
         $className        = $this->getClassName();
         $classDescription = $this->getDescription();
         $namespace        = $this->getNameSpace();
+        
+        // 如果没有类型，使用键名作为类型
         if (!$type) {
-            // 没有类型,跳过
-            echo "没有类型,跳过  $className  \n";
-
-            return false;
+            $type = strtolower($this->key);
         }
+        
+        // 检查是否有 allOf 引用其他类，如果有则继承该类
+        $extendsClass = "BaseSchema";
+        if (!empty($this->schema?->allOf) && is_array($this->schema->allOf)) {
+            foreach ($this->schema->allOf as $item) {
+                if (isset($item->{'$ref'}) && $item->{'$ref'} != '#/definitions/BaseSchema') {
+                    $refKey = str_replace('#/definitions/', '', $item->{'$ref'});
+                    // 将 Schema 名称转换为类名
+                    if (substr($refKey, -6) == 'Schema') {
+                        $refClassName = substr($refKey, 0, -6);
+                        // 转换为大驼峰命名
+                        $parts = explode('-', $refClassName);
+                        $refClassName = implode('', array_map('ucfirst', $parts));
+                        
+                        // 检查该类是否存在
+                        if (isset(self::$list[$refKey])) {
+                            $extendsClass = $refClassName;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        
+        // 如果没有描述，使用默认描述
+        if (empty($classDescription)) {
+            $classDescription = "The {$className} class.";
+        }
+        
         $classString = <<<html
 <?php
 namespace $namespace;
@@ -85,7 +114,7 @@ use AmisPhp\BaseSchema;
  *
 $methods
  */
-class {$className} extends BaseSchema
+class {$className} extends $extendsClass
 {
     protected string \$type = '{$type}';
 }
@@ -150,7 +179,8 @@ html;
         $type = $this->getType();
         if (empty($type)) {
             if (substr($this->keyOrigin, -6) == 'Schema') {
-                return substr($this->keyOrigin, 0, -6);
+                $key = substr($this->keyOrigin, 0, -6);
+                return $key;
             }
 
             return $this->keyOrigin;
@@ -197,8 +227,20 @@ html;
         $description = $this->schema?->description ?? '';
         if(empty($description)){
             // 没有描述,但是有上级
-
-
+            // 检查是否有 allOf 引用其他定义
+            if (!empty($this->schema?->allOf) && is_array($this->schema->allOf)) {
+                foreach ($this->schema->allOf as $item) {
+                    if (isset($item->{'$ref'})) {
+                        $refKey = str_replace('#/definitions/', '', $item->{'$ref'});
+                        if (isset(self::$list[$refKey])) {
+                            $refDescription = self::$list[$refKey]->getDescription();
+                            if (!empty($refDescription)) {
+                                return $refDescription;
+                            }
+                        }
+                    }
+                }
+            }
         }
         return $description;
     }
