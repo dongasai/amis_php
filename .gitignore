@@ -3,3 +3,5 @@ vendor
 composer.lock
 noai.md
 *.log
+.phpunit.cache/test-results
+test*.php
