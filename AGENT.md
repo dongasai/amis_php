@@ -34,7 +34,7 @@
 2.  **获取 AMIS Schema:** 运行 `composer run get_schema` 下载 `schema.json` 文件。
 3.  **获取 AMIS SDK:** 运行 `composer run get_sdk` 下载并解压 AMIS JavaScript/CSS 文件到 `jssdk/` 目录。
 4.  **生成 PHP 类:** 运行 `composer run build` 解析 `schema.json` 并生成 `src/Renderer2/` 中的 PHP 组件类。
-5.  **查看演示:** 构建完成后，您可以探索 `demo/index.php` 来了解如何使用生成的类。
+
 
 ## 开发约定
 
