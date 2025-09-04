@@ -30,9 +30,5 @@
       "php build.php"
     ],
     "test": "phpunit"
-  },
-  "require": {
-    "symfony/console": "^6.4",
-    "symfony/finder": "^6.4"
   }
 }
